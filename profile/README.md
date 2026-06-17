@@ -6,8 +6,8 @@
 > **50 free queries/day · no card required**
 > [ansvar.eu/gateway →](https://ansvar.eu/gateway)
 >
-> One OAuth signup, access from any MCP-compatible client, 189 public MCP
-> repos reachable as queryable sources through a single endpoint.
+> One OAuth signup, access from any MCP-compatible client — our public MCP
+> connectors reachable as queryable sources through a single endpoint.
 
 ---
 
