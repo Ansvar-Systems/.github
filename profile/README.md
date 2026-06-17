@@ -13,8 +13,8 @@
 
 ## What we publish
 
-- **107 law MCPs** — EU/EFTA/UK plus selected international jurisdictions, statute-level coverage with article-level provisions
-- **163 sector regulators** — financial, cybersecurity, data-protection, competition (29 EU/EFTA countries × 4 sectors)
+- **Law MCPs** — EU/EFTA/UK plus selected international jurisdictions, statute-level coverage with article-level provisions
+- **Sector regulators** — financial, cybersecurity, data-protection, and competition across EU/EFTA countries
 - **Domain MCPs** — OWASP, STRIDE, CVE/CWE, supply-chain security, automotive, healthcare, and more
 
 Each public repo ships the schema and ingestion logic. Pre-built databases
