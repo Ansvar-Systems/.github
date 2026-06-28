@@ -3,7 +3,7 @@
 **Ground Claude, Cursor, and Copilot in legal, compliance, and security sources.**
 
 > ### ▶ Start here: Ansvar Gateway
-> **50 free queries/day · no card required**
+> **100 free queries/tool calls per day · no card required**
 > [ansvar.eu/gateway →](https://ansvar.eu/gateway)
 >
 > One OAuth signup, access from any MCP-compatible client — our public MCP
