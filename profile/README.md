@@ -1,29 +1,48 @@
 # Ansvar Systems
 
-**Ground Claude, Cursor, and Copilot in legal, compliance, and security sources.**
+Legal, compliance, and security sources for AI agents — every answer cited to the official source.
 
-> ### ▶ Start here: Ansvar Gateway
-> **100 free queries/tool calls per day · no card required**
-> [ansvar.eu/gateway →](https://ansvar.eu/gateway)
->
-> One OAuth signup, access from any MCP-compatible client — our public MCP
-> connectors reachable as queryable sources through a single endpoint.
+## Connect your agent
 
----
+The [Ansvar Gateway](https://gateway.ansvar.eu) serves the full corpus fleet through one MCP endpoint. The free tier gives 100 queries per day, no card required.
 
-## What we publish
+Claude Code (one line):
 
-- **Law MCPs** — EU/EFTA/UK plus selected international jurisdictions, statute-level coverage with article-level provisions
-- **Sector regulators** — financial, cybersecurity, data-protection, and competition across EU/EFTA countries
-- **Domain MCPs** — OWASP, STRIDE, CVE/CWE, supply-chain security, automotive, healthcare, and more
+```bash
+claude mcp add ansvar --transport http https://gateway.ansvar.eu/mcp
+```
 
-Each public repo ships the schema and ingestion logic. Pre-built databases
-live on Ansvar infrastructure because TDM and standards-licensing constraints
-on the upstream sources keep us from redistributing the corpus as a public
-artifact. Every repo's README explains its self-host path.
+Claude Desktop / Cursor — add to `claude_desktop_config.json` (or `mcp.json`):
 
-## Paid tiers
+```json
+{
+  "mcpServers": {
+    "ansvar": {
+      "type": "url",
+      "url": "https://gateway.ansvar.eu/mcp"
+    }
+  }
+}
+```
 
-Premium adds case law, preparatory works, and authority guidance. Team and
-Company add workflows (threat modeling, DPIA, FRIA, tender review),
-per-tenant cryptographic audit ledger, and quota lifting. [Compare tiers →](https://ansvar.eu/gateway)
+Claude.ai — Settings → Connectors → Add custom connector → paste `https://gateway.ansvar.eu/mcp`
+
+First request opens an OAuth signup flow. Setup guide: [ansvar.eu/docs/quickstart](https://ansvar.eu/docs/quickstart)
+
+## What's inside
+
+- Statute-level law corpora across dozens of audited jurisdictions, EU/EFTA/UK and international — see the [coverage map](https://ansvar.eu/coverage)
+- Sector regulators: financial, cybersecurity, data protection, competition
+- Security intelligence: CVE/KEV/EPSS, MITRE ATT&CK, CWE/CAPEC, OWASP
+- Compliance workflows: threat modeling, DPIA, gap analysis — see [tiers](https://ansvar.eu/pricing)
+
+Every served row carries a citation with source URL, publisher, and license.
+
+## Open source
+
+- [agent-affect-skills](https://github.com/Ansvar-Systems/agent-affect-skills) — skills that let coding agents report friction, embarrassment, and load-bearing weirdness at the end of a task ([docs](https://ansvar.eu/docs/agent-skills))
+- [ansvar-compliance-skills](https://github.com/Ansvar-Systems/ansvar-compliance-skills) — Claude skills for CRA vulnerability obligations, regulatory threat modeling, and incident-reporting navigation
+
+## Why the databases aren't in the repos
+
+The public law-MCP repos ship the schema and ingestion code. Pre-built databases stay on Ansvar infrastructure because TDM and standards-licensing constraints on the upstream sources keep us from redistributing the corpus as a public artifact. Each repo's README explains its self-host path.
